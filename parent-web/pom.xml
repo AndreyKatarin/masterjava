@@ -11,10 +11,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>upload</artifactId>
+    <artifactId>parent-web</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
-    <name>Upload</name>
+    <packaging>pom</packaging>
+    <name>Parent-web</name>
 
     <build>
         <plugins>
@@ -29,11 +29,21 @@
         </plugins>
     </build>
 
+    <properties>
+        <tomcat.version>8.5.24</tomcat.version>
+    </properties>
+
     <dependencies>
         <dependency>
-            <groupId>ru.javaops</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+            <version>${tomcat.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.j2html</groupId>
+            <artifactId>j2html</artifactId>
+            <version>1.3.0</version>
         </dependency>
     </dependencies>
 </project>
